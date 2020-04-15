@@ -32,6 +32,8 @@ print("Exercise 3.1:")
 A = np.mat([[1,1],[0,1]])
 B = np.mat([[0.5], [1.0]])
 R = B*B.T
+C = np.mat([1, 0])
+Q = 10
 mu = np.mat([[0], [0]])
 u = np.mat([0])
 Sigma = np.mat([[0,0],[0,0]])
@@ -47,10 +49,31 @@ for i in range(1, 6):
     print(mu)
     print(Sigma)
     eigen_value, eigen_vector = np.linalg.eig(Sigma)
-    ell1 = Ellipse(xy = (0.0, 0.0), width = eigen_value[1], height = eigen_value[0], angle = np.arctan(eigen_vector[1,0]/eigen_vector[0,0])*180.0/3.1415926, facecolor='yellow', alpha=0.3)
+    ell1 = Ellipse(xy = (mu[0,0], mu[1,0]), width = eigen_value[1], height = eigen_value[0], angle = np.arctan(-eigen_vector[0,0]/eigen_vector[1,0])*180.0/3.1415926, facecolor='yellow', alpha=0.3)
     ax.add_patch(ell1)
 
-plt.axis('scaled')
-plt.axis('equal')   #changes limits of x or y axis so that equal increments of x and y have the same length
+print("#############")
+print("Exercise 3.2:")
+
+z = np.mat([5])
+K = Sigma*C.T*(C*Sigma*C.T+Q).I
+mu_5 = mu + K*(z - C*mu)
+Sigma_5 = (np.mat(np.identity(2))-K*C)*Sigma
+print("K_5: ")
+print(K)
+print("mu: ")
+print(mu_5)
+print("Sigma: ")
+print(Sigma_5)
+
+fig2 = plt.figure()
+ax2 = fig2.add_subplot(111)
+ax2.add_patch(ell1)
+eigen_value, eigen_vector = np.linalg.eig(Sigma_5)
+ell1 = Ellipse(xy = (mu_5[0,0], mu_5[1,0]), width = eigen_value[1], height = eigen_value[0], angle = np.arctan(-eigen_vector[0,0]/eigen_vector[1,0])*180.0/3.1415926, facecolor='blue', alpha=0.3)
+ax2.add_patch(ell1)
 
 plt.show()
+# plt.axis('scaled')
+# plt.axis('equal')   #changes limits of x or y axis so that equal increments of x and y have the same length
+
