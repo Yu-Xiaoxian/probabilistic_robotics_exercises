@@ -73,7 +73,61 @@ eigen_value, eigen_vector = np.linalg.eig(Sigma_5)
 ell1 = Ellipse(xy = (mu_5[0,0], mu_5[1,0]), width = eigen_value[1], height = eigen_value[0], angle = np.arctan(-eigen_vector[0,0]/eigen_vector[1,0])*180.0/3.1415926, facecolor='blue', alpha=0.3)
 ax2.add_patch(ell1)
 
-plt.show()
 # plt.axis('scaled')
 # plt.axis('equal')   #changes limits of x or y axis so that equal increments of x and y have the same length
 
+print("#############")
+print("Exercise 4.1:")
+fig3 = plt.figure()
+ax3 = fig3.add_subplot(111)
+theta = np.linspace(0, 2*np.pi,800)
+x,y = np.cos(theta)*1.01, np.sin(theta)*1.01
+ax3.plot(x, y, color='blue', linewidth=2.0)
+
+x,y = np.cos(theta)*0.99, np.sin(theta)*0.99
+ax3.plot(x, y, color='blue', linewidth=2.0)
+
+v = np.linspace(0.99,1.01,10)
+v.shape = (10, 1)
+x1 = v * x
+y1 = v * y
+ax3.plot(x1, y1, color='blue', linewidth=1.0)
+
+print("#############")
+print("Exercise 4.3:")
+G = np.mat([[1,0,0],[0,1,1],[0,0,1]])
+Sigma = np.mat([[0.01,0,0],[0,0.01,0],[0,0,10000]])
+Sigma_p = G*Sigma*G.T
+print(Sigma_p)
+
+print("#############")
+print("Exercise 4.4:")
+mu = np.mat([[1],[0],[0]])
+z = np.mat([1])
+C = np.mat([1,0,0])
+Q = np.mat([0.01])
+K = Sigma_p*C.T*(C*Sigma_p*C.T+Q).I
+mu_f = mu + K*(z - C*mu)
+Sigma_f = (np.mat(np.identity(3))-K*C)*Sigma_p
+print(K)
+print(mu_f)
+print(Sigma_f)
+
+print("#############")
+print("Exercise 4.5:")
+G = np.mat([[1,0,0],[0,1,1],[0,0,1]])
+Sigma = np.mat([[0.01,0,0],[0,10000,0],[0,0,0.01]])
+Sigma_p = G*Sigma*G.T
+print(Sigma_p)
+mu = np.mat([[1],[0],[0]])
+z = np.mat([1])
+C = np.mat([1,0,0])
+Q = np.mat([0.01])
+K = Sigma_p*C.T*(C*Sigma_p*C.T+Q).I
+mu_f = mu + K*(z - C*mu)
+Sigma_f = (np.mat(np.identity(3))-K*C)*Sigma_p
+print(K)
+print(mu_f)
+print(Sigma_f)
+
+plt.show()
