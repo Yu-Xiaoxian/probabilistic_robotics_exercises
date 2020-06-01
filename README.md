@@ -1,4 +1,5 @@
-# probabilistic_robotics_exercises
+# Probabilistic Robotics Exercises
+# 《概率机器人》课后习题解答
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Yu-Xiaoxian/probabilistic_robotics_exercises/master)
 
