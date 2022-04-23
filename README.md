@@ -1,7 +1,7 @@
 # [Probabilistic Robotics Exercises](https://github.com/Yu-Xiaoxian/probabilistic_robotics_exercises)
 # [《概率机器人》课后习题解答](https://github.com/Yu-Xiaoxian/probabilistic_robotics_exercises)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Yu-Xiaoxian/probabilistic_robotics_exercises/master)
+|binder| |license|
 
 Detailed Solutions for exercises of book "Probabilistic Robotics" in both English &amp; Chinese. Chinese Version will be finished first.
 
@@ -48,3 +48,14 @@ jupyter notebook
 [E-Book 课本电子版](https://github.com/Yvon-Shong/Probabilistic-Robotics)
 
 [Referenced Exercise 其他习题解答](https://github.com/pptacher/probabilistic_robotics)
+
+
+.. |binder| image:: https://mybinder.org/badge_logo.svg
+     :alt: Binder.
+     :scale: 100%
+     :target: https://mybinder.org/v2/gh/Yu-Xiaoxian/probabilistic_robotics_exercises/master
+
+.. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
+     :alt: MIT license.
+     :scale: 100%
+     :target: https://github.com/Yu-Xiaoxian/probabilistic_robotics_exercises/blob/master/LICENSE
