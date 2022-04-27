@@ -11,9 +11,9 @@ Detailed Solutions for exercises of book "Probabilistic Robotics" in both Englis
 《概率机器人》课后习题解答，使用人工智能界比较流行的工具链「Python + Jupyter Notebook」，Python 实现作业的代码，Jupyter Notebook 增加文字描述并显示代码执行结果，做到图文并茂。
 
 有三种方式可以看到渲染结果：
-1. 直接在[Github](https://github.com/Yu-Xiaoxian/probabilistic_robotics_exercises/blob/master/简介.ipynb)上查看渲染结果
-2. 在[nbviewer](https://nbviewer.org/github/Yu-Xiaoxian/probabilistic_robotics_exercises/blob/master/简介.ipynb)上在线看到效果
-3. 本地运行
+1. 查看[GitHub](https://github.com/Yu-Xiaoxian/probabilistic_robotics_exercises/blob/master/简介.ipynb)的渲染效果
+2. 查看[nbviewer](https://nbviewer.org/github/Yu-Xiaoxian/probabilistic_robotics_exercises/blob/master/简介.ipynb)的渲染效果，比 GitHub 的更美观一些
+3. 本地运行，具体步骤如下
 
 ## 本地运行
 首先安装 Jupyter
